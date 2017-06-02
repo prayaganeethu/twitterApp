@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NeMo's Twitter</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="author" content="Neethu Mohandas">
+	<link rel='stylesheet' id='all-css-0-1' href='https://s2.wp.com/_static/??-eJyFj+sKwjAMhV/IGgde5g/xWbouuM6mDUvK8O3tHApemH9CEr6TcwIjG5eiYlSgbDjki48CwV9RoEdl667mMa2dyAp+4wMGq9gaTqIf05LMpQHLntjqRBC23mJAKtiSjHj/VE1tVyIu2oxcaNM0PKCIKZV8JqNdMfoTj6Yo8/tQwPfNLPUQk/qillfzdXO2As4NNFk1RRC9BZy4M52qbX3cHHZVXfd3VumU7g==' type='text/css' media='all' />
+	</head>
+<body>
+	<div>GeekSkool: <a href="https://www.geekskool.com/">Home</a></div>
+	<hr>
+	<h5>NeMo's Recent Twitter Feed</h5>
+	<ol>
+	{% for status in statuses if 'http' in status['text'] %}
+
+		<li> {{ status['author']['name']}} : {{ status['text'] }}</li> 
+
+	{% endfor %}
+	</ol>
+</body>
+</html>

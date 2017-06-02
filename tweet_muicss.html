@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//cdn.muicss.com/mui-0.9.16/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.9.16/js/mui.min.js"></script>
+    <style>
+     /* Tutorial CSS goes here */
+     /**
+     * Body CSS
+     */
+    html,
+    body {
+      height: 100%;
+    }
+
+    html,
+    body,
+    input,
+    textarea,
+    buttons {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+    }
+
+
+    /**
+     * Sidebar CSS
+     */
+    #sidebar {
+      background-color: #E57373;
+      padding: 15px;
+    }
+
+    @media (min-width: 768px) {
+      #sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 180px;
+        height: 100%;
+        padding-top: 30px;
+      }
+    }
+
+/**
+ * Content CSS
+ */
+@media (min-width: 768px) {
+  #content {
+    margin-left: 180px;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <!-- Tutorial HTML goes here -->
+    <div id="sidebar">
+      <div class="mui--text-light mui--text-display1 mui--align-vertical">NeMo's Twitter</div>
+    </div>
+    <div id="content" class="mui-container-fluid">
+  <!-- blog posts go here -->
+    <div class="mui-row">
+      <div class="mui-c<link href="//cdn.muicss.com/mui-0.9.16/css/mui.min.css" rel="stylesheet" type="text/css" />ol-sm-10 mui-col-sm-offset-1">
+        <br>
+        <br>
+        <div class="mui--text-dark-secondary mui--text-body2">RECENT POSTS</div>
+        <div class="mui-container-fluid"></div>
+        <br>
+        <ol>
+        {% for status in statuses if 'http' in status['text'] %}
+
+          <li> {{ status['author']['name']}} : {{ status['text'] }}</li> 
+
+        {% endfor %}
+        </ol>
+        <br>        
+      </div>
+    </div>
+    </div>
+  </body>
+</html>
